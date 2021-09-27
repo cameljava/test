@@ -1,9 +1,8 @@
 const wraper3 = require('./wraper3.js');
 
-let testV;
-
-(async () => {
-  var obj = {};
+let ntestV;
+add test;
+addtest(async () => {
   // obj[testV] = 't';
   try {
     console.time('test');
@@ -22,3 +21,4 @@ let testV;
     console.log('print in test finally');
   }
 })();
+var test;

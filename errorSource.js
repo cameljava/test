@@ -1,32 +1,22 @@
 const axios = require('axios').default;
 
+module.exports.test = (name) => {
+  // const url = `http://localhost?user=${name}`;
+  const url = `https://dev.api.cochlear.com/bfs/v1/patient?clinicId=224624512098440`;
 
-module.exports.test = (name)=>{
-  console.log(name);
   return new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('foo');
-    // reject(new Error('kevins error'));
-  }, 3000);
-});
-    // await new Promise(resolve => setTimeout(resolve, 2000));
-  // return 'testError';
-  // throw 'noP';
-  // return Promise.reject('noP');
-  // throw await Promise.reject('noP');
-  
-   // console.log( setTimeout((data)=>{console.log(data);
-   //  return data;
-  // // throw 'no no again';
-  // }, 2000, 'testValue to print')
-   // );
-  // try {
-    // const response = await axios.get('/user?ID=12345');
-    // console.log(response);
-  // } catch (error) {
-    // console.error(error);
-    // console.error(typeof error);
-    // console.log(error.isAxiosError);
-    // throw error;
-  // }
+    console.log(name);
+    setTimeout(async () => {
+      try {
+        console.log(`query with url: ${url}`);
+        let googleResponse = await axios.get(url);
+        console.log(`print in errorSource, response: ${googleResponse}`);
+        console.dir(googleResponse.data);
+        resolve(googleResponse.data);
+      } catch (error) {
+        console.log(`print in errorSource, caught error: ${error}`);
+        reject(error);
+      }
+    }, 3000);
+  });
 };

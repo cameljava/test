@@ -1,0 +1,8 @@
+[
+  "token",
+  "redisToken",
+  "cache",
+  "cognitoPassword",
+  "boomiClinicAPIKey",
+  "boomiPatientAPIKey"
+]
