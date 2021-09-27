@@ -4,18 +4,19 @@ const _ = require('lodash');
 
 let shouldRetry = (error) => {
   let shouldRetry = true;
-  const shouldNotRetryStatusArray = ['400', '403', '404'];
+  const shouldNotRetryStatusArray = ['400', '403', '404', '401'];
+  console.log(error);
   if (
     error.isAxiosError &&
     error.response &&
-    !_.includes(shouldNotRetryStatusArray, _.trim(error.response.status))
+    _.includes(shouldNotRetryStatusArray, _.trim(error.response.status))
   ) {
     shouldRetry = false;
   }
   console.log('check shouldRetry');
-  console.log(
-    _.includes(shouldNotRetryStatusArray, _.trim(error.response.status))
-  );
+  // console.log(
+  //   _.includes(shouldNotRetryStatusArray, _.trim(error.response.status))
+  // );
   return shouldRetry;
 };
 
@@ -35,7 +36,8 @@ let shouldRetry = (error) => {
   } catch (error) {
     console.log(`error: ${error}`);
     console.log('*************');
-    console.log(error.response.status);
-    console.log(error.toJSON());
+    console.log(error);
+    // console.log(error.response.status);
+    // console.log(error.toJSON());
   }
 })();

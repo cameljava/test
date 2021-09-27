@@ -1,8 +1,8 @@
 const axios = require('axios').default;
 
 module.exports.test = (name) => {
-  // const url = `http://localhost?user=${name}`;
-  const url = `https://dev.api.cochlear.com/bfs/v1/patient?clinicId=224624512098440`;
+  const url = `http://localhost?user=${name}`;
+  // const url = `https://dev.api.cochlear.com/bfs/v1/patient?clinicId=224624512098440`;
 
   return new Promise((resolve, reject) => {
     console.log(name);
