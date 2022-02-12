@@ -1,0 +1,53 @@
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "name": "Thomas",
+        "car": [
+          {
+            "id": "1",
+            "build": "ford",
+            "color": "red",
+            "make": "focus",
+            "owner": {
+              "id": "1",
+              "name": "Thomas"
+            }
+          },
+          {
+            "id": "3",
+            "build": "BMW",
+            "color": "black",
+            "make": "3",
+            "owner": {
+              "id": "1",
+              "name": "Thomas"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Jacky",
+        "car": []
+      },
+      {
+        "id": "3",
+        "name": "Micky",
+        "car": [
+          {
+            "id": "2",
+            "build": "toyato",
+            "color": "white",
+            "make": "yaris",
+            "owner": {
+              "id": "3",
+              "name": "Micky"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

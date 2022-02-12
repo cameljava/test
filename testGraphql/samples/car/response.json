@@ -1,0 +1,14 @@
+{
+  "data": {
+    "car": {
+      "id": "1",
+      "make": "focus",
+      "build": "ford",
+      "color": "red",
+      "owner": {
+        "id": "1",
+        "name": "Thomas"
+      }
+    }
+  }
+}

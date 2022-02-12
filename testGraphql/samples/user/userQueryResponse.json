@@ -1,0 +1,70 @@
+{
+  "data": {
+    "user": {
+      "id": "1",
+      "name": "Thomas",
+      "car": [
+        {
+          "build": "ford",
+          "make": "focus",
+          "id": "1",
+          "color": "red",
+          "owner": {
+            "id": "1",
+            "name": "Thomas",
+            "car": [
+              {
+                "id": "1",
+                "build": "ford",
+                "owner": {
+                  "__typename": "User",
+                  "id": "1",
+                  "name": "Thomas"
+                }
+              },
+              {
+                "id": "3",
+                "build": "BMW",
+                "owner": {
+                  "__typename": "User",
+                  "id": "1",
+                  "name": "Thomas"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "build": "BMW",
+          "make": "3",
+          "id": "3",
+          "color": "black",
+          "owner": {
+            "id": "1",
+            "name": "Thomas",
+            "car": [
+              {
+                "id": "1",
+                "build": "ford",
+                "owner": {
+                  "__typename": "User",
+                  "id": "1",
+                  "name": "Thomas"
+                }
+              },
+              {
+                "id": "3",
+                "build": "BMW",
+                "owner": {
+                  "__typename": "User",
+                  "id": "1",
+                  "name": "Thomas"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
