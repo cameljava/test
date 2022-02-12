@@ -11,6 +11,10 @@ const typeDefs = gql`
     car(id: Int!): Car
     me: User
 }
+  type Mutation {
+    createUser(id: Int!, name: String!) : User! 
+  }
+
   type User{
     id: ID!
     name: String!
@@ -43,12 +47,29 @@ const resolvers = {
     },
     me: () =>(users[0])
   },
+
+  Mutation: {
+    createUser: ( parent, { id, name}) => {
+        console.log('print parent in createUser resolver');
+        console.log(parent);
+
+        const user = {
+          id,
+          name
+        };
+        users.push(user);
+        return users;
+      }
+    },
+
   Car: {
     owner: parent => users[parent.owner -1]
   },
+
   User: {
-    car: parent => parent.cars.map(carId => cars[carId -1])
+    car: parent => parent.car.map(carId => cars[carId -1])
   }
+
 };
 
 const server = new ApolloServer({
