@@ -14,12 +14,14 @@ const typeDefs = gql`
   type User{
     id: ID!
     name: String!
+    car: [Car]
 }
   type Car{
     id: ID!
     build: String!
     make: String!
     color: String!
+    owner: User!
 }
 `;
 
@@ -40,6 +42,12 @@ const resolvers = {
       return car[0];
     },
     me: () =>(users[0])
+  },
+  Car: {
+    owner: parent => users[parent.owner -1]
+  },
+  User: {
+    car: parent => parent.cars.map(carId => cars[carId -1])
   }
 };
 
