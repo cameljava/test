@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: "16.x"
           cache: "npm"
-        run: npm install
       - name: test
         run: echo 'test'
           echo ${{secrets.NORMALSTRING}}
