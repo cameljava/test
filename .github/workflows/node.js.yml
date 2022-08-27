@@ -23,7 +23,7 @@ jobs:
       - name: test
         run: echo 'test'
           echo ${{secrets.NORMALSTRING}}
-          echo ${{secrets.ESCAPESTRING}}
+          echo $(printf %q ${{secrets.ESCAPESTRING}})
         shell: bash
 #    - run: npm ci
 #    - run: npm run build --if-present
