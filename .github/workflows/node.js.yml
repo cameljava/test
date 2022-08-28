@@ -21,7 +21,8 @@ jobs:
           node-version: "16.x"
           cache: "npm"
       - name: test
-        run: echo 'test'
+        run: |
+          echo 'test'
           echo ${{secrets.NORMALSTRING}}
           echo ${{secrets.ESCAPESTRING}}
           echo '${{secrets.UNSAFESTRING}}'
