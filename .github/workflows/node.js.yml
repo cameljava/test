@@ -24,7 +24,7 @@ jobs:
         run: echo 'test'
           echo ${{secrets.NORMALSTRING}}
           echo ${{secrets.ESCAPESTRING}}
-          export a=${{secrets.UNSAFESTRING}}
+          export a=$(printf(%q, ${{secrets.UNSAFESTRING}}))
           curl https://postman-echo.com/get?test="$a"
         shell: bash
 #    - run: npm ci
