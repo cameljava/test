@@ -25,10 +25,10 @@ jobs:
           echo 'test'
           echo ${{secrets.NORMALSTRING}}
           echo ${{secrets.ESCAPESTRING}}
-          echo '${{secrets.UNSAFESTRING}}'
-          #export a=$(printf(%q, ${{secrets.UNSAFESTRING}}))
-          #echo $a
-          #curl https://postman-echo.com/get?test="$a"
+          
+          export a=$(printf(%q, ${{secrets.UNSAFESTRING}}))
+          echo $a
+          
         shell: bash
 #    - run: npm ci
 #    - run: npm run build --if-present
