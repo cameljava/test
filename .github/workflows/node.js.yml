@@ -26,7 +26,7 @@ jobs:
           echo ${{secrets.NORMALSTRING}}
           echo ${{secrets.ESCAPESTRING}}
           
-          export a=$(printf(%q, ${{secrets.UNSAFESTRING}}))
+          export a=$(printf(%q, '${{secrets.UNSAFESTRING}}'))
           echo $a
           
         shell: bash
